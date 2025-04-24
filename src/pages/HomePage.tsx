@@ -1,13 +1,13 @@
-import Header from "../Header/Header"
+import Header from "../Header/Header";
+import DreamJob from "../LandingPage/DreamJob";
 
-function HomePage(){
-    return(
-        <>
-            <div>
-                <Header/>
-            </div>
-        </>
-    )
+function HomePage() {
+  return (
+    <div className="min-h-[100vh] bg-mine-shaft-950 font-'poppins'">
+      <Header />
+      <DreamJob />
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
