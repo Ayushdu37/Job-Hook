@@ -1,9 +1,30 @@
-# My Project
+# JobHook
 
-This is the content from the remote repository.
+JobHook is an in-development web platform aimed at helping users explore and manage job opportunities efficiently. The project is currently focused on frontend development, with plans to integrate a Spring Boot and MongoDB-based backend in future versions.
 
-## Features
-- Feature 1
-- Feature 2
+## 🛠 Tech Stack
 
-And these are my local additions.
+### Frontend
+- **Languages:** TypeScript, HTML, CSS
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+
+### Planned Backend
+- **Framework:** Spring Boot
+- **Database:** MongoDB
+
+## 🚀 How to Run (Frontend Only)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Ayushdu37/JobHook.git
+   cd JobHook
+   
+2. **Install Dependencies**
+   ```bash
+   npm install
+
+3. **Start the development server**
+   ```bash
+   npm start
+
