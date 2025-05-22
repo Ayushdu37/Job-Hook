@@ -1,20 +1,19 @@
 import { Button, Divider } from "@mantine/core";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
-import Profile from "../TalentProfile/Profile";
-import { profile } from "../Data/TalentData";
-import RecTalent from "../TalentProfile/RecTalent";
+import JobDesc from "../JobDesc.tsx/JobDesc";
+import RecommendedJob from "../JobDesc.tsx/RecommendedJob";
 
-const TalentProfilePage = ()=>{
+const JobDescPage = ()=>{
     return <div className="min-h-[90vh] bg-mine-shaft-950 font-'poppins' p-4">
-        <Link className="my-4 inline-block" to="/find-talent">
+        <Link className="my-4 inline-block" to="/find-jobs">
         <Button color="brightSun.4" leftSection={<IconArrowLeft size={20}/>} variant="light" fullWidth>Back</Button>
         </Link>
-        <div className="flex gap-5">
-          <Profile />
-          <RecTalent />
+        <div className="flex gap-5 justify-around">
+            <JobDesc/>
+            <RecommendedJob/>
         </div>
   </div>
 }
 
-export default TalentProfilePage;
+export default JobDescPage;
