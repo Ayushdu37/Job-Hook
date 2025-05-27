@@ -13,6 +13,7 @@ import FindTalentPage from './pages/FIndTalentPage';
 import TalentProfilePage from './pages/TalentProfilePage';
 import PostJobPage from './pages/PostJobPage';
 import JobDescPage from './pages/JobDescPage';
+import ApplyJobPage from './pages/ApplyJobPage';
 
 function App() {
   const theme = createTheme({
@@ -28,17 +29,20 @@ function App() {
   return (
     <MantineProvider defaultColorScheme='dark' theme={theme}>
       <BrowserRouter>
+      <div className='relative'>
       <Header/>
       <Divider size="xs" />
         <Routes>
           <Route path='/find-jobs' element={<FindJobs/>}/>
           <Route path='/find-talent' element={<FindTalentPage/>}/>
           <Route path='/jobs' element={<JobDescPage/>}/>
+          <Route path='/apply-job' element={<ApplyJobPage/>}/>
           <Route path='/post-job' element={<PostJobPage/>}/>
           <Route path='/talent-profile' element={<TalentProfilePage/>}/>
           <Route path='*' element={<HomePage/>}/>
         </Routes>
       <Footer/>
+      </div>
       </BrowserRouter> 
     </MantineProvider>
   );
