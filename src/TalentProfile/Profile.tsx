@@ -16,8 +16,8 @@ const Profile = (props:any)=>{
                 <IconMapPin className="h-5 w-5" stroke={1.5}/> {props.location}
             </div>
         </div>
-        <Divider my="xl" mx="xs"/>
-        <div className="px-3">
+        <Divider my="xl"/>
+        <div>
             <div className="text-2xl font-semibold mb-3">About</div>
             <div className="text-sm text-mine-shaft-300 text-justify">{props.about}</div>
         </div>
