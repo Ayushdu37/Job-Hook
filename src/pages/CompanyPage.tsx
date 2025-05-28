@@ -1,4 +1,4 @@
-import { Button } from "@mantine/core";
+import { Button, Divider } from "@mantine/core";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import Company from "../CompanyProfile/Company";
@@ -9,7 +9,6 @@ const CompanyPage = ()=>{
     return<div className="min-h-[90vh] bg-mine-shaft-950 font-'poppins' p-4">
         
         <Button my="md" onClick={()=>navigate(-1)} color="brightSun.4" leftSection={<IconArrowLeft size={20}/>} variant="light" >Back</Button>
-        
         <div className="flex gap-5 justify-between">
           <Company/>
           <SimilarCompanies/>
