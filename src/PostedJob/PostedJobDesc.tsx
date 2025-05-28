@@ -1,6 +1,6 @@
 import { Badge, Tabs } from "@mantine/core";
 import Jobs from "../FindJobs/Jobs";
-import JobDesc from "../JobDesc.tsx/JobDesc";
+import JobDesc from "../JobDesc/JobDesc";
 import { talents } from "../Data/TalentData";
 import TalentCard from "../FindTalent/TalentCard";
 
