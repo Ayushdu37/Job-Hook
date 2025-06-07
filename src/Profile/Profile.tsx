@@ -1,19 +1,28 @@
-import { Button, Divider } from "@mantine/core";
-import { IconBriefcase, IconMapPin } from "@tabler/icons-react";
+import { ActionIcon, Button, Divider } from "@mantine/core";
+import { IconBriefcase, IconDeviceFloppy, IconMapPin, IconPencil } from "@tabler/icons-react";
 import ExpCard from "./ExpCard";
 import CertiCard from "./CertiCard";
+import { useState } from "react";
 
 const Profile = (props:any)=>{  
-    return <div className="w-2/3">
+    const [edit, setEdit] = useState([false, false, false, false, false]);
+    const handleEdit=(index:any)=>{
+        const newEdit=[...edit];
+        newEdit[index]=!newEdit[index];
+        setEdit(newEdit);
+    }
+    return <div className="w-4/5 mx-auto">
         <div className="relative">
             <img className="rounded-t-2xl" src="/Profile/banner.jpg" alt="" />
             <img className="h-48 w-48 rounded-full -bottom-1/3 absolute left-3 border-mine-shaft-950 border-8" src="/avatar.png" alt="" />
             </div>
             <div className="px-3 mt-16">
-                <div className="text-3xl font-semibold flex justify-between">{props.name}<Button color="brightSun.4" variant="light" >Message</Button></div>
-                <div className="text-xl flex gap-1 items-center"><IconBriefcase className="h-5 w-5" stroke={1.5}/> {props.role} &bull; {props.company}</div>
+                <div className="text-3xl font-semibold flex justify-between">Jarrod Wood<ActionIcon onClick={()=>handleEdit(0)} size="lg" color="brightSun.4" variant="subtle" >
+      {edit[0]?<IconDeviceFloppy className="h-4/5 w-4/5"/>:<IconPencil className="h-4/5 w-4/5"  />}
+    </ActionIcon></div>
+                <div className="text-xl flex gap-1 items-center"><IconBriefcase className="h-5 w-5" stroke={1.5}/> Software Engineer &bull; Google</div>
                 <div className="flex gap-1 text-lg text-mine-shaft-400 items-center text-mine-shaft-300">
-                <IconMapPin className="h-5 w-5" stroke={1.5}/> {props.location}
+                <IconMapPin className="h-5 w-5" stroke={1.5}/> New York, United States
             </div>
         </div>
         <Divider my="xl"/>
