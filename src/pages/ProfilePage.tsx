@@ -1,5 +1,6 @@
 import { Divider } from "@mantine/core";
-import Profile from "../TalentProfile/Profile";
+import Profile from "../Components/TalentProfile/Profile";
+
 
 const ProfilePage = ()=>{
     return <div className="min-h-[90vh] bg-mine-shaft-950 font-'poppins'">

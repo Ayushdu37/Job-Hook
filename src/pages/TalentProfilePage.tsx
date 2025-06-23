@@ -1,9 +1,9 @@
 import { Button, Divider } from "@mantine/core";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
-import Profile from "../TalentProfile/Profile";
 import { profile } from "../Data/TalentData";
-import RecTalent from "../TalentProfile/RecTalent";
+import Profile from "../Components/TalentProfile/Profile";
+import RecTalent from "../Components/TalentProfile/RecTalent";
 
 const TalentProfilePage = ()=>{
     return <div className="min-h-[90vh] bg-mine-shaft-950 font-'poppins' p-4">

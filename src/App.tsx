@@ -5,21 +5,37 @@ import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import '@mantine/tiptap/styles.css';
 import '@mantine/dates/styles.css';
-import HomePage from './pages/HomePage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './Components/Header/Header';
 import FindJobs from './pages/FIndJobs';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
 import FindTalentPage from './pages/FIndTalentPage';
-import TalentProfilePage from './pages/TalentProfilePage';
-import PostJobPage from './pages/PostJobPage';
-import JobDescPage from './pages/JobDescPage';
-import ApplyJobPage from './pages/ApplyJobPage';
 import CompanyPage from './pages/CompanyPage';
 import PostedJobPage from './pages/PostedJobPage';
 import JobHistoryPage from './pages/JobHistoryPage';
+import JobDescPage from './pages/JobDescPage';
+import ApplyJobPage from './pages/ApplyJobPage';
+import PostJobPage from './pages/PostJobPage';
 import SignUpPage from './pages/SignUpPage';
 import ProfilePage from './pages/ProfilePage';
+import TalentProfilePage from './pages/TalentProfilePage';
+import HomePage from './pages/HomePage';
+import Footer from './Components/Footer/Footer';
+
+// import HomePage from './pages/HomePage';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import FindJobs from './pages/FIndJobs';
+// import Header from './Header/Header';
+// import Footer from './Footer/Footer';
+// import FindTalentPage from './pages/FIndTalentPage';
+// import TalentProfilePage from './pages/TalentProfilePage';
+// import PostJobPage from './pages/PostJobPage';
+// import JobDescPage from './pages/JobDescPage';
+// import ApplyJobPage from './pages/ApplyJobPage';
+// import CompanyPage from './pages/CompanyPage';
+// import PostedJobPage from './pages/PostedJobPage';
+// import JobHistoryPage from './pages/JobHistoryPage';
+// import SignUpPage from './pages/SignUpPage';
+// import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const theme = createTheme({
