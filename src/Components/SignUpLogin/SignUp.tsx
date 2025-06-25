@@ -1,9 +1,10 @@
 import { Anchor, Button, Checkbox, Group, PasswordInput, Radio, TextInput } from "@mantine/core";
-import { IconAt, IconLock } from "@tabler/icons-react";
+import { IconAt, IconCheck, IconLock, IconX } from "@tabler/icons-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../Services/UserService";
 import { signupValidation } from "../../Services/FormValidation";
+import { notifications } from "@mantine/notifications";
 const form={
   name:"",
   email:"",
@@ -17,6 +18,7 @@ const SignUp = ()=>{
 
     const [data, setData] = useState<{[key:string]:string}>(form); 
     const [formError, setFormError] = useState<{[key:string]:string}>(form);
+    const navigate = useNavigate();
 
     const handleChange = (event:any)=>{
       if(typeof(event) == "string"){
@@ -47,10 +49,34 @@ const SignUp = ()=>{
       }
       setFormError(newFormError);
       if(valid === true){
+        
         registerUser(data).then((res)=>{
         console.log(res);
-        
-      }).catch((err)=>console.log(err));
+        setData(form);
+        notifications.show({
+          title: 'Registered Successfully',
+          message: 'Redirecting to login page...',
+          withCloseButton: true,
+          icon: <IconCheck style={{width:"90%", height:"90%"}}/>,
+          color: "teal",
+          withBorder: true,
+          className:"!border-green-500"
+        })
+        setTimeout(()=>{
+          navigate("/login");
+        }, 4000)     
+      }).catch((err)=>{
+        console.log(err);
+        notifications.show({
+          title: 'Registration Failed',
+          message: err.response.data.errorMessage,
+          withCloseButton: true,
+          icon: <IconX style={{width:"90%", height:"90%"}}/>,
+          color: "red",
+          withBorder: true,
+          className:"!border-red-500"
+        })
+      });
       }
     }
 
@@ -73,7 +99,7 @@ const SignUp = ()=>{
     </Radio.Group>
         <Checkbox autoContrast label={<>I accept{' '}<Anchor>terms & conditions</Anchor></>}/>
         <Button onClick={handleSubmit} autoContrast variant="filled">Sign up</Button>
-        <div className="mx-auto">Have an account? <Link to="/login" className="text-bright-sun-400 hover:underline">Login</Link></div>
+        <div className="mx-auto">Have an account? <span className="text-bright-sun-400 hover:underline cursor-pointer" onClick={()=>{navigate("/login");setFormError(form); setData(form)}}>Login</span></div>
     </div>
 }
 
