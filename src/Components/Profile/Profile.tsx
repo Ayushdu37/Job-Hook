@@ -1,5 +1,6 @@
 import { ActionIcon, Divider, TagsInput, Textarea } from "@mantine/core";    
 import { IconBriefcase, IconDeviceFloppy, IconMapPin, IconPencil, IconPlus } from "@tabler/icons-react";
+import { profile } from "../../Data/TalentData";
 import ExpCard from "./ExpCard";
 import CertiCard from "./CertiCard";
 import { useState } from "react";
@@ -10,11 +11,13 @@ import fields from "../../Data/Profile";
 
 const Profile = (props:any)=>{  
     const select = fields;
-    const [skills, setSkills] = useState(["React", "Springboot", "MongoDB", "HTML", "CSS"]);
+    // const [skills, setSkills] = useState(["React", "Springboot", "MongoDB", "HTML", "CSS"]);
+    const [skills, setSkills] = useState(profile.skills);
     const [edit, setEdit] = useState([false, false, false, false, false]);
     const [addExp, setAddExp] = useState(false);
     const [addCerti, setAddCerti] = useState(false);
-    const [about, setAbout] = useState('As a Software Engineer at Google, I am responsible for designing, developing, and maintaining scalable software solutions that enhance user experience and improve operational efficiency. My role involves collaborating with cross-functional teams to define project requirements, develop technical specifications, and implement robust applications using cutting-edge technologies. I actively participate in code reviews, ensuring adherence to best practices and coding standards, and contribute to the continuous improvement of the development process.');
+    // const [about, setAbout] = useState('As a Software Engineer at Google, I am responsible for designing, developing, and maintaining scalable software solutions that enhance user experience and improve operational efficiency. My role involves collaborating with cross-functional teams to define project requirements, develop technical specifications, and implement robust applications using cutting-edge technologies. I actively participate in code reviews, ensuring adherence to best practices and coding standards, and contribute to the continuous improvement of the development process.');
+    const [about, setAbout] = useState(profile.about);
     const handleEdit=(index:any)=>{
         const newEdit=[...edit];
         newEdit[index]=!newEdit[index];
@@ -26,7 +29,7 @@ const Profile = (props:any)=>{
             <img className="h-48 w-48 rounded-full -bottom-1/3 absolute left-3 border-mine-shaft-950 border-8" src="/avatar.png" alt="" />
             </div>
             <div className="px-3 mt-16">
-                <div className="text-3xl font-semibold flex justify-between">Jarrod Wood<ActionIcon onClick={()=>handleEdit(0)} size="lg" color="brightSun.4" variant="subtle" >
+                <div className="text-3xl font-semibold flex justify-between">{profile.name}<ActionIcon onClick={()=>handleEdit(0)} size="lg" color="brightSun.4" variant="subtle" >
       {edit[0]?<IconDeviceFloppy className="h-4/5 w-4/5"/>:<IconPencil className="h-4/5 w-4/5"/>}
     </ActionIcon></div>
     {
@@ -34,9 +37,9 @@ const Profile = (props:any)=>{
             <SelectInput {...select[0]}/>
             <SelectInput {...select[1]}/>
          </div>
-         <SelectInput {...select[2]}/></>:<><div className="text-xl flex gap-1 items-center"><IconBriefcase className="h-5 w-5" stroke={1.5}/> Software Engineer &bull; Google</div>
+         <SelectInput {...select[2]}/></>:<><div className="text-xl flex gap-1 items-center"><IconBriefcase className="h-5 w-5" stroke={1.5}/> {profile.role} &bull; {profile.company}</div>
                 <div className="flex gap-1 text-lg text-mine-shaft-400 items-center text-mine-shaft-300">
-                <IconMapPin className="h-5 w-5" stroke={1.5}/> New York, United States
+                <IconMapPin className="h-5 w-5" stroke={1.5}/> {profile.location}
             </div></>
     }               
         </div>
@@ -63,7 +66,7 @@ const Profile = (props:any)=>{
       splitChars={[',', ' ', '|']}
     />:<div className="flex flex-wrap gap-2">
                 {
-                    props.skills?.map((skill:any, index:any)=>
+                    profile.skills?.map((skill:any, index:any)=>
                         <div key={index} className="bg-bright-sun-300 text-sm font-medium bg-opacity-15 rounded-3xl text-bright-sun-400 px-3 py-1">{skill}</div>
                     )
                 }
@@ -81,7 +84,7 @@ const Profile = (props:any)=>{
     </ActionIcon></div></div>
             <div className="flex flex-col gap-8">
             {
-                props.experience?.map((exp:any, index:any)=><ExpCard key={index} {...exp} edit={edit[3]}/>)
+                profile.experience?.map((exp:any, index:any)=><ExpCard key={index} {...exp} edit={edit[3]}/>)
             }
             {addExp && <ExpInput setEdit={setAddExp}/>}
             </div>
@@ -95,7 +98,7 @@ const Profile = (props:any)=>{
     </ActionIcon></div></div>
             <div className="flex flex-col gap-8">
                 {
-                    props.certifications?.map((certi: any, index: any) => (
+                    profile.certifications?.map((certi: any, index: any) => (
                     <CertiCard key={index} edit={edit[4]} {...certi} />
                     ))
     }
