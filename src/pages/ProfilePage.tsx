@@ -1,5 +1,6 @@
 import { Divider } from "@mantine/core";
-import Profile from "../Components/TalentProfile/Profile";
+import Profile from "../Components/Profile/Profile";
+// import Profile from "../Components/TalentProfile/Profile";
 
 
 const ProfilePage = ()=>{
