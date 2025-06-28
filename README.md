@@ -6,8 +6,8 @@ JobHook is an in-development web platform aimed at helping users explore and man
 
 ### Frontend
 - **Languages:** TypeScript, HTML, CSS
-- **Styling:** Tailwind CSS
-- **Build Tool:** Vite
+- **Styling:** Mantine, Redux
+- **Build Tool:** React
 
 ### Planned Backend
 - **Framework:** Spring Boot
