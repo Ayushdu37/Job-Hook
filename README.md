@@ -250,8 +250,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Ayush Dubey**
 - GitHub: [@Ayushdu37](https://github.com/Ayushdu37)
-- LinkedIn: [Your LinkedIn Profile]
-- Email: your.email@example.com
+- LinkedIn: [Ayush Dubey](https://www.linkedin.com/in/ayush-dubey-655a13331/)
+- Email: ayushdu21@gmail.com
 
 ## 🙏 Acknowledgments
 
