@@ -3,8 +3,7 @@ import { removeUser } from "../Slices/UserSlice";
 import { removeJwt } from "../Slices/JwtSlice";
 
 const axiosInstance = axios.create({
-    // baseURL: 'http://localhost:8080'
-    baseURL: 'https://jobhook-backend.onrender.com/'
+    baseURL: process.env.REACT_APP_API_URL || 'https://jobhook-backend.onrender.com'
 });
 
 axiosInstance.interceptors.request.use(

@@ -28,9 +28,15 @@ public class Utilities {
 		update.inc("seq", 1);
 		FindAndModifyOptions options = new FindAndModifyOptions();
 		options.returnNew(true);
+		options.upsert(true); // Create the document if it doesn't exist
 		Sequence seqId = mongoOperation.findAndModify(query, update, options, Sequence.class);
 		if (seqId == null) {
-			throw new JobPortalException("Unable to get sequence id for key : " + key);
+			// If still null, create a new sequence document
+			Sequence newSeq = new Sequence();
+			newSeq.setId(key);
+			newSeq.setSeq(1L);
+			mongoOperation.save(newSeq);
+			return 1L;
 		}
 
 		return seqId.getSeq();
