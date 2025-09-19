@@ -183,6 +183,7 @@ REACT_APP_API_URL=http://localhost:8080
 - **Input Validation** - Server-side validation for all inputs
 - **Role-based Access** - Different access levels for users and employers
 
+
 ## 🚀 Deployment
 
 ### Frontend Deployment (Render/Netlify/Vercel)
