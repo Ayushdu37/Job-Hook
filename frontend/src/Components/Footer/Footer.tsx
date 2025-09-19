@@ -1,4 +1,4 @@
-import { IconAnchor, IconBrandFacebook, IconBrandInstagram, IconBrandTelegram, IconBrandX, IconBrandYoutube } from "@tabler/icons-react";
+import { IconAnchor, IconBrandFacebook, IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandTelegram, IconBrandX, IconBrandYoutube } from "@tabler/icons-react";
 import { footerLinks } from "../../Data/Data";
 import { useLocation } from "react-router-dom";
 import { Divider } from "@mantine/core";
@@ -13,9 +13,9 @@ const Footer = () => {
             </div>
             <div className="text-sm text-mine-shaft-300">Job portal with user profiles, skill updates, certifications, work experience and admin job postings.</div>
             <div className="flex gap-3 text-bright-sun-400 [&>a]:bg-mine-shaft-900 [&>a]:p-2 [&>a]:rounded-full [&>a]:cursor-pointer hover:[&>a]:bg-mine-shaft-700">
-                <a href="https://www.instagram.com/code.marshal_/"><IconBrandInstagram /></a>
-                <a href="https://t.me/code_Marshal"><IconBrandTelegram /></a>
-                <a href="https://www.youtube.com/@Code.Marshal"><IconBrandYoutube /></a>
+                <a href="https://www.instagram.com/ayush_0.0_/?next=%2F"><IconBrandInstagram /></a>
+                <a href="https://github.com/Ayushdu37"><IconBrandGithub /></a>
+                <a href="https://www.linkedin.com/in/ayush-dubey-655a13331/"><IconBrandLinkedin /></a>
             </div>
         </div>
         {
